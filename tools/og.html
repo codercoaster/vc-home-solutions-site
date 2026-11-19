@@ -1,0 +1,36 @@
+<!doctype html>
+<!-- Source for images/og-image.jpg (1200×630). Render with a headless browser at 1200×630. Not linked from the site. -->
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  body { width: 1200px; height: 630px; background: #F2EEE6; font-family: "Bricolage Grotesque", sans-serif; color: #1E1D19; display: grid; grid-template-columns: 560px 1fr; overflow: hidden; }
+  .photo { position: relative; overflow: hidden; }
+  .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
+  .photo .before { clip-path: inset(0 50% 0 0); }
+  .photo .line { position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; margin-left: -1.5px; background: #FBF9F4; }
+  .tag { position: absolute; top: 22px; padding: 6px 10px; font: 500 14px "Geist Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: #FBF9F4; border-radius: 2px; }
+  .tag.b { left: 22px; background: rgba(30,29,25,.74); }
+  .tag.a { right: 22px; background: #3D4A2B; }
+  .copy { padding: 56px 56px 48px; display: flex; flex-direction: column; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .mark { width: 52px; height: 52px; border-radius: 4px; background: #3D4A2B; color: #EEF0E4; display: grid; place-items: center; font-weight: 800; font-size: 21px; letter-spacing: -.02em; }
+  .name { font-weight: 650; font-size: 26px; letter-spacing: -.02em; }
+  h1 { margin-top: auto; font-size: 66px; line-height: .98; font-weight: 720; letter-spacing: -.038em; }
+  p { margin-top: 22px; font-size: 22px; line-height: 1.4; color: #45423A; }
+  .foot { margin-top: 28px; padding-top: 18px; border-top: 2px solid #1E1D19; display: flex; justify-content: space-between; font: 500 15px "Geist Mono", monospace; letter-spacing: .04em; color: #45423A; }
+</style></head>
+<body>
+  <div class="photo">
+    <img src="../images/projects/kitchen-after.webp" alt="">
+    <img class="before" src="../images/projects/kitchen-before.webp" alt="">
+    <span class="line"></span>
+    <span class="tag b">Before</span><span class="tag a">After</span>
+  </div>
+  <div class="copy">
+    <div class="brand"><span class="mark">VC</span><span class="name">VC Home Solutions</span></div>
+    <h1>Homes rebuilt by hand, across the Valley.</h1>
+    <p>Remodels, flooring, upgrades and water-damage repair in the Phoenix area.</p>
+    <div class="foot"><span>FREE ESTIMATES</span><span>(480) 555-0142</span></div>
+  </div>
+</body></html>

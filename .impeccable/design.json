@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-19T00:00:00Z",
+  "title": "Design System: VC Home Solutions",
+  "extensions": {
+    "colorMeta": {
+      "olive": { "role": "primary", "displayName": "Workshop Olive", "tonalRamp": ["#1B2112", "#2C3620", "#3D4A2B", "#56653E", "#7A8962", "#A3AE8F", "#CDD3C0", "#EEF0E4"] },
+      "brass": { "role": "tertiary", "displayName": "Stamp Brass", "tonalRamp": ["#3A2A0C", "#5C4314", "#8A6420", "#A9812F", "#C49F55", "#D9BE86", "#EBDAB7", "#F7EFDF"] },
+      "paper": { "role": "neutral", "displayName": "Limewash", "tonalRamp": ["#1E1D19", "#45423A", "#66625A", "#9C978D", "#CFC9BC", "#E7E1D5", "#F2EEE6", "#FBF9F4"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero H1 only, set in explicit masked lines." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles and scope trade names." },
+      "title": { "displayName": "Title", "purpose": "Spec-sheet titles, schedule tasks, work-order name." },
+      "body": { "displayName": "Body", "purpose": "Reading copy, 44–52ch." },
+      "label": { "displayName": "Label (mono)", "purpose": "Numbers, measurements, job/work-order IDs, dates and their keys." }
+    },
+    "shadows": [
+      { "name": "paper-lift", "value": "0 1px 2px rgba(30,29,25,.06), 0 24px 48px -24px rgba(30,29,25,.35)", "purpose": "Paper objects resting on an image or the ground: estimate slip, spec tag, toast." },
+      { "name": "sheet-on-field", "value": "0 2px 4px rgba(0,0,0,.08), 0 40px 80px -40px rgba(0,0,0,.6)", "purpose": "The work order on the olive field." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Authored moments: renovation wipe, title lines, schedule bars, underline fill." },
+      { "name": "ease-quick", "value": "cubic-bezier(0.23, 1, 0.32, 1)", "purpose": "UI state changes, 160–260ms." },
+      { "name": "press", "value": "scale(0.97) 160ms", "purpose": "Buttons and chips on :active." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "560px" },
+      { "name": "md", "value": "700px" },
+      { "name": "lg", "value": "900px" },
+      { "name": "xl", "value": "1000px" },
+      { "name": "xxl", "value": "1100px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ink Button", "kind": "button", "refersTo": "button-ink",
+      "description": "Primary action on paper.",
+      "html": "<button class=\"ds-btn-ink\">Continue <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 8h9M8.5 4l4 4-4 4\"/></svg></button>",
+      "css": ".ds-btn-ink{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 22px;border:0;border-radius:4px;background:#1E1D19;color:#F2EEE6;font:600 16px 'Bricolage Grotesque',system-ui,sans-serif;transition:background-color .22s cubic-bezier(.23,1,.32,1),transform .16s cubic-bezier(.23,1,.32,1)}.ds-btn-ink:hover{background:#3D4A2B}.ds-btn-ink:hover svg{transform:translateX(3px)}.ds-btn-ink svg{transition:transform .22s}.ds-btn-ink:active{transform:scale(.97)}.ds-btn-ink:focus-visible{outline:2px solid #3D4A2B;outline-offset:3px}"
+    },
+    {
+      "name": "Olive Button", "kind": "button", "refersTo": "button-olive",
+      "description": "Submit on the work order.",
+      "html": "<button class=\"ds-btn-olive\">Send work order</button>",
+      "css": ".ds-btn-olive{min-height:50px;padding:0 22px;border:0;border-radius:4px;background:#3D4A2B;color:#EEF0E4;font:600 16px 'Bricolage Grotesque',system-ui,sans-serif;transition:background-color .22s,transform .16s}.ds-btn-olive:hover{background:#2C3620}.ds-btn-olive:active{transform:scale(.97)}.ds-btn-olive:focus-visible{outline:2px solid #3D4A2B;outline-offset:3px}"
+    },
+    {
+      "name": "Scope Chip", "kind": "chip", "refersTo": "chip",
+      "description": "Multi-select scope chip on the estimate slip.",
+      "html": "<label class=\"ds-chip\"><input type=\"checkbox\" checked><span>Flooring</span></label>",
+      "css": ".ds-chip{position:relative}.ds-chip input{position:absolute;inset:0;opacity:0;margin:0}.ds-chip span{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border:1.5px solid rgba(30,29,25,.32);border-radius:999px;font:520 14px 'Bricolage Grotesque',system-ui,sans-serif;color:#1E1D19;transition:background-color .18s,border-color .18s,color .18s}.ds-chip input:checked+span{background:#3D4A2B;border-color:#3D4A2B;color:#EEF0E4}.ds-chip:hover input:not(:checked)+span{border-color:#45423A}.ds-chip input:focus-visible+span{outline:2px solid #3D4A2B;outline-offset:2px}"
+    },
+    {
+      "name": "Underline Field", "kind": "input", "refersTo": "work-order-sheet",
+      "description": "Work-order text field: label above, underline only.",
+      "html": "<label class=\"ds-field\"><span>Full name</span><input type=\"text\"></label>",
+      "css": ".ds-field{display:grid;gap:4px;font-family:'Bricolage Grotesque',system-ui,sans-serif}.ds-field span{font-size:13px;font-weight:600;color:#45423A}.ds-field input{min-height:44px;padding:8px 0;border:0;border-bottom:1.5px solid rgba(30,29,25,.32);background:transparent;font-size:17px;caret-color:#3D4A2B}.ds-field input:focus{outline:none;border-bottom-color:#3D4A2B;box-shadow:0 1.5px 0 #3D4A2B}"
+    },
+    {
+      "name": "Nav Link", "kind": "nav", "refersTo": "button-ink",
+      "description": "Nav link with progressive underline.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\">Job files</a>",
+      "css": ".ds-nav-link{position:relative;font:500 15px 'Bricolage Grotesque',system-ui,sans-serif;color:#45423A;text-decoration:none}.ds-nav-link::after{content:'';position:absolute;left:0;right:0;bottom:-3px;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .42s cubic-bezier(.16,1,.3,1)}.ds-nav-link:hover{color:#1E1D19}.ds-nav-link:hover::after{transform:scaleX(1);transform-origin:left}"
+    },
+    {
+      "name": "Received Stamp", "kind": "custom", "refersTo": "work-order-sheet",
+      "description": "Brass stamp shown when a work order is sent.",
+      "html": "<div class=\"ds-stamp\">Received<small>NOV 19, 2026</small></div>",
+      "css": ".ds-stamp{display:inline-grid;justify-items:center;gap:2px;padding:10px 18px 8px;border:3px solid #8A6420;border-radius:6px;color:#8A6420;font:800 30px/1 'Bricolage Grotesque',system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;box-shadow:inset 0 0 0 2px #FBF9F4,inset 0 0 0 3.5px #8A6420}.ds-stamp small{font:500 11px 'Geist Mono',monospace;letter-spacing:.08em}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Job Board",
+    "overview": "The site is the contractor's own paperwork. Job files with spec sheets, a ruled scope-of-work list, a schedule board and a work order. Nothing is decoration: every surface is something a remodeling crew would actually hand a homeowner. The ground is limewash paper, the commitment colour is a deep olive that owns whole regions (the work-order field and the footer), and ink does the talking.",
+    "keyCharacteristics": [
+      "Paper, olive and ink; brass appears only as a stamp.",
+      "One sans family (Bricolage Grotesque) at every size; mono only for numbers, measurements, job IDs and dates.",
+      "Sharp paper corners, ruled lines, square drawn checkboxes.",
+      "Before/after proof is the hero, not a picture of it."
+    ],
+    "rules": [
+      { "name": "The Field Rule", "body": "Olive commits at region scale (a whole section or footer) or at control scale (a chip, a box). Never as scattered accents on paper.", "section": "colors" },
+      { "name": "The Brass Is a Stamp Rule", "body": "Brass appears only where something has been officially received or signed off.", "section": "colors" },
+      { "name": "The Measured Mono Rule", "body": "Mono only carries numbers and measurements or the keys that label them. Never headlines, never body copy.", "section": "typography" },
+      { "name": "The No Kicker Rule", "body": "No eyebrow labels above headings; identifiers sit on the heading's line.", "section": "typography" }
+    ],
+    "dos": [
+      "Do keep the ground limewash (paper) and put objects on it as sheets (sheet).",
+      "Do use real photography for material texture; crop swatches from real photos rather than drawing textures.",
+      "Do keep motion to the authored moments: the renovation wipe, schedule bars drawing in sequence, the stamp press.",
+      "Do keep cursors to default, pointer on things that act, and text only inside typed fields."
+    ],
+    "donts": [
+      "Don't add eyebrow labels, section numbers or icon-tile cards.",
+      "Don't rotate or tilt icons and marks on hover.",
+      "Don't use mono for anything that is not a number, measurement or its key.",
+      "Don't put a one-sided coloured stripe on a rounded box."
+    ]
+  }
+}
